@@ -1,0 +1,113 @@
+{
+	"status":"ok",
+	"articles":[
+		{
+			"source":{
+				"name":"Vanity Fair"
+			},
+			"author":"Caleb Ecarma",
+			"title":"Republicans Keep Coming Up With More Batshit Reasons to Oppose D.C. Statehood",
+			"description":"Talk of car dealerships, airports, and yard signs obscures the glaring reason the right opposes D.C. statehood.",
+			"url":"https://www.vanityfair.com/news/2021/03/republicans-oppose-dc-statehood",
+			"urlToImage":"https://media.vanityfair.com/photos/605a5e116c0da06e2048a353/16:9/w_1280,c_limit/GettyImages-1231358748.jpg",
+			"publishedAt":"2021-03-23T21:34:44Z",
+			"content":"There is one very obvious reason why Republicans are hell-bent on refusing statehood to Washington, D.C.: The city is a Democratic stronghold, and its becoming a state would surely result in two more… [+5487 chars]"
+		},
+		{
+			"source":{
+				"name":"Seeking Alpha"
+			},
+			"author":"The Value Portfolio",
+			"title":"Tesla Likely Won't Be Worth Anything Close To $3000",
+			"description":"ARK Invest recently announced that Tesla can be expected to hit a price target of almost $3000. Read this article to find out why this could be unlikely to happen.",
+			"url":"https://seekingalpha.com/article/4415688-tesla-likely-wont-be-worth-anything-close-to-3000",
+			"urlToImage":"https://static.seekingalpha.com/cdn/s3/uploads/getty_images/506868328/medium_image_506868328.jpg",
+			"publishedAt":"2021-03-23T21:29:52Z",
+			"content":"Photo by Sjo/iStock Unreleased via Getty Images\r\nTo start, we want to qualify the title by saying our title assumes an environment without hyperinflation, where the US dollar doesn't drastically drop… [+7391 chars]"
+		},
+		{
+			"source":{
+				"name":"Electrek"
+			},
+			"author":"Fred Lambert",
+			"title":"If Tesla can determine that drivers aren’t paying attention, shouldn’t it warn drivers in the moment?",
+			"description":"Consumer Reports is out with a new report about concerns regarding Tesla’s use of its driver-facing camera, and they raised an interesting question: If Tesla can determine that drivers aren’t paying attention, shouldn’t it warn drivers in that moment, like mo…",
+			"url":"https://electrek.co/2021/03/23/if-tesla-can-determine-that-drivers-arent-paying-attention-shouldnt-it-warn-drivers-in-the-moment/",
+			"urlToImage":"https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2016/03/tesla-autopilot-ap.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+			"publishedAt":"2021-03-23T21:28:18Z",
+			"content":"Consumer Reports is out with a new report about concerns regarding Tesla’s use of its driver-facing camera, and they raised an interesting question: If Tesla can determine that drivers aren’t paying … [+2340 chars]"
+		},
+		{
+			"source":{
+				"name":"New York Post"
+			},
+			"author":"Post Editorial Board",
+			"title":"Real data on anti-Asian hate and other commentary",
+			"description":"Reality Check: Real Data on Anti-Asian Hate “Asian-Americans have undoubtedly been the target of hatred ever since they came to the US,” notes Pradheep J. Shanker at National Review, but “the narrative being pushed of suddenly resurgent anti-Asian sentiment i…",
+			"url":"https://nypost.com/2021/03/23/real-data-on-anti-asian-hate-and-other-commentary/",
+			"urlToImage":"https://nypost.com/wp-content/uploads/sites/2/2021/02/asian-hate-crimes-01.jpg?quality=90&strip=all&w=1200",
+			"publishedAt":"2021-03-23T21:22:40Z",
+			"content":"Reality Check: Real Data on Anti-Asian Hate\r\nAsian-Americans have undoubtedly been the target of hatred ever since they came to the US, notes Pradheep J. Shanker at National Review, but the narrative… [+3938 chars]"
+		},
+		{
+			"source":{
+				"name":"Slashdot.org"
+			},
+			"author":"Anonymous Coward",
+			"title":"Consumer Reports: Tesla's In-Car Cameras Raise Privacy Concerns",
+			"description":"Tesla’s use of in-car cameras to record and transmit video footage of passengers to develop self-driving technology raises privacy concerns, influential U.S. magazine Consumer Reports said on Tuesday. Consumer Reports said the usage potentially undermines the…",
+			"url":"https://slashdot.org/submission/13491314/consumer-reports-teslas-in-car-cameras-raise-privacy-concerns",
+			"urlToImage":null,
+			"publishedAt":"2021-03-23T21:18:55Z",
+			"content":"Tesla’s use of in-car cameras to record and transmit video footage of passengers to develop self-driving technology raises privacy concerns, influential U.S. magazine Consumer Reports said on Tuesday… [+683 chars]"
+		},
+		{
+			"source":{
+				"name":"Mashable"
+			},
+			"author":"Sasha Lekach",
+			"title":"Tesla stans dunk on Porsche Taycan’s slow software update",
+			"description":"The first electric Porsche Taycans are due for a software update, but it won't be quick. \nDrivers won't be able to push a button on the in-car screen, connect to WiFi, and update the car while in their own garage. Instead, the $100,000+ electric vehicle needs…",
+			"url":"https://mashable.com/article/porsche-taycan-software-update/",
+			"urlToImage":"https://mondrian.mashable.com/2021%252F03%252F23%252F55%252Ff9eeab4467b441a0a3d6b3fbef014b5e.64823.jpg%252F1200x630.jpg?signature=aKvo5cFJubStf5NROt_fjh4kSvM=",
+			"publishedAt":"2021-03-23T21:17:23Z",
+			"content":"The first electric Porsche Taycans are due for a software update, but it won't be quick. \r\nDrivers won't be able to push a button on the in-car screen, connect to WiFi, and update the car while in th… [+2261 chars]"
+		},
+		{
+			"source":{
+				"name":"The Boston Globe"
+			},
+			"author":"Neal E. Boudette",
+			"title":"Tesla’s Autopilot technology faces fresh scrutiny",
+			"description":"Federal officials are looking into a series of recent accidents involving Teslas that either were using Autopilot or might have been using it.",
+			"url":"https://www.bostonglobe.com/2021/03/23/business/teslas-autopilot-technology-faces-fresh-scrutiny/",
+			"urlToImage":"https://bostonglobe-prod.cdn.arcpublishing.com/resizer/m1WrqPYClNc6HRd5ONiKsZnW-mo=/506x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/EBZWBJFUMLQBADSGNIG4JICMWQ.jpg",
+			"publishedAt":"2021-03-23T21:15:26Z",
+			"content":"Tesla faced numerous questions about its Autopilot technology after a Florida driver was killed in 2016 when the system of sensors and cameras failed to see and brake for a tractor-trailer crossing a… [+4450 chars]"
+		},
+		{
+			"source":{
+				"name":"Slashdot.org"
+			},
+			"author":"feedfeeder",
+			"title":"Tesla Semi is unlawful in Australia, so it's lobbying to change regulations - Roadshow",
+			"description":"Right now, the Semi's just a tad too wide for the land down under, but the government is reviewing changes.",
+			"url":"https://slashdot.org/firehose.pl?op=view&id=144276440&utm_source=rss1.0&utm_medium=feed",
+			"urlToImage":null,
+			"publishedAt":"2021-03-23T21:13:11Z",
+			"content":null
+		},
+		{
+			"source":{
+				"name":"Itsecuritynews.info"
+			},
+			"author":"www.ITSecurityNews.info",
+			"title":"Russian Kryuchkov pleaded guilty to conspiring to hack Tesla’s computer network",
+			"description":"Tesla CEO Elon Musk commented in Russian on the news that Russian Egor Kryuchkov had pleaded guilty on Twitter on Friday. According to the federal prosecutor’s office in the state of Nevada, the verdict of Russian Egor Kryuchkov, who pleaded guilty to conspir…",
+			"url":"https://www.itsecuritynews.info/russian-kryuchkov-pleaded-guilty-to-conspiring-to-hack-teslas-computer-network/",
+			"urlToImage":null,
+			"publishedAt":"2021-03-23T21:09:00Z",
+			"content":"Tesla CEO Elon Musk commented in Russian on the news that Russian Egor Kryuchkov had pleaded guilty on Twitter on Friday\r\nAccording to the federal prosecutor’s office in the state of Nevada, the verd… [+1850 chars]"
+		}
+	]
+}

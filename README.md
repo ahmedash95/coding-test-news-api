@@ -62,7 +62,7 @@ Array
 
 
 # NewsAggregator
-This class is used in index.php and it's responsible to load the news from the providers and return them
+This class is used in index.php to load the news from the providers and return them
 
 # Package
 This directory contains third party packages to fetch news from. 

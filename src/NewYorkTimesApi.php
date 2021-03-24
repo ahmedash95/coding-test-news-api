@@ -3,7 +3,7 @@ namespace App;
 
 use Package\NYTimes\NewYorkTimes;
 
-class NewYorkTimesApi
+class NewYorkTimesApi  implements NewsPaperInterface
 {
     private $newYorkTimes ;
     public function __construct(NewYorkTimes $newYorkTimes)

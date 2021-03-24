@@ -1,25 +1,21 @@
 <?php
 namespace App;
 
-use App\FoxNewsApi;
-use App\NewYorkTimesApi;
+use App\NewsPaperInterface;
+
 class NewsAggregator
 {
-    private $foxNews;
-    private $newYorkTimes;
-
-    public function __construct(FoxNewsApi $foxNewsApi ,NewYorkTimesApi $newYorkTimesApi )
+    private $newspapers = [];
+    public function addNewsPaper(NewsPaperInterface $newsPapers)
     {
-        $this->foxNews = $foxNewsApi;
-        $this->newYorkTimes = $newYorkTimesApi;
+            $this->newspapers[] = $newsPapers;
     }
-
     public function get()
     {
-		$news =[];
-		$news[] = $this->foxNews->News();
-		$news = $this->newYorkTimes->News();
-		return $news;
-       
+        $news =[];
+        foreach ($this->newspapers as $newsPaper) {
+            $news[] = $newsPaper->News();
+        }
+        return $news;
     }
 }

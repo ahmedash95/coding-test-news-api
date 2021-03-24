@@ -3,7 +3,7 @@ namespace App;
 
 use Package\FoxNews\FoxNews;
 
-class FoxNewsApi
+class FoxNewsApi implements NewsPaperInterface
 {
     private $foxNews ;
     public function __construct(FoxNews $foxNews)

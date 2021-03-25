@@ -5,21 +5,28 @@ namespace App\Repository;
 use App\Contract\NewsRepository;
 use App\Mapper\FoxNewsMapper;
 use Package\FoxNews\FoxNews;
+use RuntimeException;
 
 class FoxNewsRepository implements NewsRepository
 {
-    protected FoxNews $provider;
-
-    public function __construct(FoxNews $provider)
+    public function getProvider()
     {
-        $this->provider = $provider;
+        try {
+            return new FoxNews;
+        } catch (RuntimeException $e) {
+            return null;
+        }
     }
 
     public function getNews(): array
     {
         $articles = [];
 
-        foreach ($this->provider->getNewsFromAPI()['articles'] as $article) {
+        if (!$this->getProvider()) {
+            return $articles;
+        }
+
+        foreach ($this->getProvider()->getNewsFromAPI()['articles'] as $article) {
             $mapper = new FoxNewsMapper($article);
             $articles[] = $mapper->map();
         }

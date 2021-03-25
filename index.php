@@ -2,16 +2,16 @@
 
 use App\NewsAggregator;
 use App\Repository\FoxNewsRepository;
+use App\Repository\MyNewsRepository;
 use App\Repository\NewYourTimesRepository;
-use Package\FoxNews\FoxNews;
-use Package\NYTimes\NewYorkTimes;
 
 require __DIR__.DIRECTORY_SEPARATOR."vendor".DIRECTORY_SEPARATOR."autoload.php";
 
 $aggregator = new NewsAggregator();
 
-$aggregator->addNewsRepository(new FoxNewsRepository(new FoxNews));
-$aggregator->addNewsRepository(new NewYourTimesRepository(new NewYorkTimes));
+$aggregator->addNewsRepository(new FoxNewsRepository);
+$aggregator->addNewsRepository(new NewYourTimesRepository);
+$aggregator->addNewsRepository(new MyNewsRepository);
 
 $news = $aggregator->get();
 

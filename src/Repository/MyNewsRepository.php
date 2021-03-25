@@ -2,17 +2,17 @@
 
 namespace App\Repository;
 
-use App\Contract\NewsRepository;
-use App\Mapper\NewYourkTimesMapper;
-use Package\NYTimes\NewYorkTimes;
 use RuntimeException;
+use Package\MyNews\MyNews;
+use App\Mapper\MyNewsMapper;
+use App\Contract\NewsRepository;
 
-class NewYourTimesRepository implements NewsRepository
+class MyNewsRepository implements NewsRepository
 {
     public function getProvider()
     {
         try {
-            return new NewYorkTimes;
+            return new MyNews;
         } catch (RuntimeException $e) {
             return null;
         }
@@ -26,8 +26,8 @@ class NewYourTimesRepository implements NewsRepository
             return $articles;
         }
 
-        foreach ($this->getProvider()->getNews()->articles as $article) {
-            $mapper = new NewYourkTimesMapper($article);
+        foreach ($this->getProvider()->getNewsFromAPI()['articles'] as $article) {
+            $mapper = new MyNewsMapper($article);
             $articles[] = $mapper->map();
         }
 

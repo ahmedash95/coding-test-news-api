@@ -1,5 +1,6 @@
 <?php
 
+use App\Log;
 use App\NewsAggregator;
 use App\Repository\MyNewsRepository;
 use App\Repository\FoxNewsRepository;
@@ -12,6 +13,8 @@ $aggregator = new NewsAggregator();
 $aggregator->addNewsRepository(new FoxNewsRepository);
 $aggregator->addNewsRepository(new NewYourTimesRepository);
 $aggregator->addNewsRepository(new MyNewsRepository);
+
+Log::info('Start new request to fetch news');
 
 $news = $aggregator->get();
 

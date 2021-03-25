@@ -19,15 +19,9 @@ class NewYourTimesRepository implements NewsRepository
     {
         $articles = [];
 
-        try {
-            Log::info('Start new request to fetch news');
-            foreach ($this->getProvider()->getNews()->articles as $article) {
-                $mapper = new NewYourkTimesMapper($article);
-                $articles[] = $mapper->map();
-            }
-        } catch (RuntimeException $e) {
-            Log::setChannel("app-errors");
-            Log::error($e->getMessage(), $e->getTrace());
+        foreach ($this->getProvider()->getNews()->articles as $article) {
+            $mapper = new NewYourkTimesMapper($article);
+            $articles[] = $mapper->map();
         }
 
         return $articles;

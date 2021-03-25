@@ -3,6 +3,7 @@
 
 namespace Package\NYTimes;
 
+use RuntimeException;
 
 class NewYorkTimes
 {
@@ -10,7 +11,12 @@ class NewYorkTimes
 
 	public function __construct()
 	{
-		$this->data = simplexml_load_file(__DIR__.DIRECTORY_SEPARATOR.'nytimes.xml');
+		$path = __DIR__.DIRECTORY_SEPARATOR.'nytimes.xml';
+        if (! file_exists($path)) {
+            throw new RuntimeException("File data is not found.");
+        }
+
+		$this->data = simplexml_load_file($path);
 	}
 
 	public function getNews()

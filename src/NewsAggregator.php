@@ -13,14 +13,9 @@ class NewsAggregator
 
 	/**
 	 * Create new NewsAggregator.
-	 * 
-	 * @param ?NewsRepository $newsRepository
 	 */
-	public function __construct(?NewsRepository $newsRepository = null)
+	public function __construct()
 	{
-		if (!is_null($newsRepository)) {
-			$this->repositories[] = $newsRepository;
-		}
 	}
 
 	public function addNewsRepository(NewsRepository $newsRepository)

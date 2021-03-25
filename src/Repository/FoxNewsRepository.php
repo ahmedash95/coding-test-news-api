@@ -2,33 +2,32 @@
 
 namespace App\Repository;
 
-use App\Contract\NewsRepository;
-use App\Mapper\FoxNewsMapper;
-use Package\FoxNews\FoxNews;
+use App\Log;
 use RuntimeException;
+use Package\FoxNews\FoxNews;
+use App\Mapper\FoxNewsMapper;
+use App\Contract\NewsRepository;
 
 class FoxNewsRepository implements NewsRepository
 {
     public function getProvider()
     {
-        try {
-            return new FoxNews;
-        } catch (RuntimeException $e) {
-            return null;
-        }
+        return new FoxNews;
     }
 
     public function getNews(): array
     {
         $articles = [];
 
-        if (!$this->getProvider()) {
-            return $articles;
-        }
-
-        foreach ($this->getProvider()->getNewsFromAPI()['articles'] as $article) {
-            $mapper = new FoxNewsMapper($article);
-            $articles[] = $mapper->map();
+        try {
+            Log::info('Start new request to fetch news');
+            foreach ($this->getProvider()->getNewsFromAPI()['articles'] as $article) {
+                $mapper = new FoxNewsMapper($article);
+                $articles[] = $mapper->map();
+            }
+        } catch (RuntimeException $e) {
+            Log::setChannel("app-errors");
+            Log::error($e->getMessage(), $e->getTrace());
         }
 
         return $articles;

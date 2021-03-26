@@ -81,6 +81,6 @@ Feel free to change any code in index.php or src package. but please be careful 
 # Acceptance Criteria
 
 - Use FoxNews and NewYorkTimes.
-- There is another broken provider called BrokenProviderNews please use it in the aggregator class, this one is always throwing FileNotFoundException. and you need to handle its failure in the application
+- There is another broken provider called BrokenProviderNews please use it in the aggregator class, this one is always throwing RuntimeException. and you need to handle its failure in the application
 - Use logging to log any failure when fetching news from any of the providers and store them in app-errors.log file. to make it simple we suggest to use this logging library [Monolog](https://github.com/Seldaek/monolog).
 - Make it easy to add any provider later. as the purpose after your changes will be to add 100 provider. but you don't need to add them your self.

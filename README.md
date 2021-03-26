@@ -74,8 +74,13 @@ This directory contains third party packages to fetch news from.
 
 So what we expect from you in this task? 
 
-Actually we want you to help us improve this code and we first need you to address it's issues and bad code smells.
-
-How can we refactor this code to be Maintainable, Extendable, and Testable applying the principles and best OOP practises.
+we want you to help us improve this code and we first need you to address it's issues and bad code smells and how can we refactor this code to be Maintainable, Extendable, and Testable by applying the principles and best OOP practises.
 
 Feel free to change any code in index.php or src package. but please be careful that you should not change any code in `package` directory.
+
+# Acceptance Criteria
+
+- Use FoxNews and NewYorkTimes.
+- There is another broken provider called BrokenProviderNews please use it in the aggregator class, this one is always throwing FileNotFoundException. and you need to handle its failure in the application
+- Use logging to log any failure when fetching news from any of the providers and store them in app-errors.log file. to make it simple we suggest to use this logging library [Monolog](https://github.com/Seldaek/monolog).
+- Make it easy to add any provider later. as the purpose after your changes will be to add 100 provider. but you don't need to add them your self.

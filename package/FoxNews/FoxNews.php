@@ -1,21 +1,16 @@
 <?php
-
 namespace Package\FoxNews;
 
-use RuntimeException;
+use App\ValueObjects\DataSource;
 
 class FoxNews
 {
-    private $data = [];
+    /** @var DataSource */
+    private DataSource $dataSource;
 
     public function __construct()
     {
-        $path = __DIR__.DIRECTORY_SEPARATOR.'foxnews.json';
-        if (!file_exists($path)) {
-            throw new RuntimeException('File data is not found.');
-        }
-
-        $this->data = json_decode(file_get_contents($path), true);
+        $this->dataSource = new DataSource(__DIR__ . DIRECTORY_SEPARATOR . 'foxnews.json');
     }
 
     public function getNewsFromAPI()

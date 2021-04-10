@@ -1,21 +1,16 @@
 <?php
-
 namespace Package\BrokenProvider;
 
-use RuntimeException;
+use App\ValueObjects\DataSource;
 
 class BrokenProvider
 {
-    private $data = [];
+    /** @var DataSource */
+    private DataSource $dataSource;
 
     public function __construct()
     {
-        $path = __DIR__.DIRECTORY_SEPARATOR.'broken.xml';
-        if (!file_exists($path)) {
-            throw new RuntimeException('File data is not found.');
-        }
-
-        $this->data = simplexml_load_file($path);
+        $this->dataSource = new DataSource(__DIR__ . DIRECTORY_SEPARATOR . 'broken.xml');
     }
 
     public function getNews()

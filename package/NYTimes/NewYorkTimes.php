@@ -1,21 +1,16 @@
 <?php
-
 namespace Package\NYTimes;
 
-use RuntimeException;
+use App\ValueObjects\DataSource;
 
 class NewYorkTimes
 {
-    private $data = [];
+    /** @var DataSource */
+    private DataSource $dataSource;
 
     public function __construct()
     {
-        $path = __DIR__.DIRECTORY_SEPARATOR.'nytimes.xml';
-        if (!file_exists($path)) {
-            throw new RuntimeException('File data is not found.');
-        }
-
-        $this->data = simplexml_load_file($path);
+        $this->dataSource = new DataSource(__DIR__ . DIRECTORY_SEPARATOR . 'nytimes.xml');
     }
 
     public function getNews()

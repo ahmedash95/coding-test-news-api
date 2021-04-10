@@ -1,9 +1,12 @@
 <?php
+
 namespace Package\BrokenProvider;
 
+use App\Contracts\NewsAggregatorInterface;
+use App\DTOs\NewsAggregatorData;
 use App\ValueObjects\DataSource;
 
-class BrokenProvider
+class BrokenProvider implements NewsAggregatorInterface
 {
     /** @var DataSource */
     private DataSource $dataSource;
@@ -13,8 +16,8 @@ class BrokenProvider
         $this->dataSource = new DataSource(__DIR__ . DIRECTORY_SEPARATOR . 'broken.xml');
     }
 
-    public function getNews()
+    public function fetch (): array
     {
-        return $this->data;
+        return NewsAggregatorData::allFromDataSource(json_decode($this->dataSource->contents(), true));
     }
 }

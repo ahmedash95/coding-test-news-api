@@ -1,9 +1,11 @@
 <?php
 namespace Package\NYTimes;
 
+use App\Contracts\NewsAggregatorInterface;
+use App\DTOs\NewsAggregatorData;
 use App\ValueObjects\DataSource;
 
-class NewYorkTimes
+class NewYorkTimes implements NewsAggregatorInterface
 {
     /** @var DataSource */
     private DataSource $dataSource;
@@ -13,8 +15,8 @@ class NewYorkTimes
         $this->dataSource = new DataSource(__DIR__ . DIRECTORY_SEPARATOR . 'nytimes.xml');
     }
 
-    public function getNews()
+    public function fetch (): array
     {
-        return $this->data;
+        return NewsAggregatorData::allFromDataSource((array) simplexml_load_string($this->dataSource->contents()));
     }
 }

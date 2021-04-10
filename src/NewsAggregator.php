@@ -1,46 +1,24 @@
 <?php
-
 namespace App;
 
-use Package\FoxNews\FoxNews;
-use Package\NYTimes\NewYorkTimes;
+use App\Contracts\NewsAggregatorInterface;
+use App\Factories\NewsAggregatorFactory;
 
 class NewsAggregator
 {
-    private $foxNews;
-    private $newYorkTimes;
+    /** @var string */
+    private string $defaultAggregator = 'FoxNews';
 
-    public function __construct()
+    /** @var NewsAggregatorInterface */
+    private NewsAggregatorInterface $newsAggregator;
+
+    public function __construct(?string $aggregator = null)
     {
-        $this->foxNews = new FoxNews();
-        $this->newYorkTimes = new NewYorkTimes();
+        $this->newsAggregator = NewsAggregatorFactory::createAggregator($aggregator ?? $this->defaultAggregator);
     }
 
-    public function get()
+    public function get(): array
     {
-        $news = [];
-        foreach ($this->foxNews->getNewsFromAPI()['articles'] as $row) {
-            $news[] = [
-                'title'        => $row['title'],
-                'author'       => $row['author'],
-                'image'        => $row['urlToImage'],
-                'publish_date' => $row['publishedAt'],
-                'source'       => $row['source']['name'],
-                'url'          => $row['url'],
-            ];
-        }
-
-        foreach ($this->newYorkTimes->getNews()->articles as $row) {
-            $news[] = [
-                'title'        => (string) $row->title,
-                'author'       => (string) $row->author,
-                'image'        => (string) $row->image,
-                'publish_date' => (string) $row->published_at,
-                'source'       => (string) $row->source,
-                'url'          => (string) $row->url,
-            ];
-        }
-
-        return $news;
+        return $this->newsAggregator->fetch();
     }
 }

@@ -1,9 +1,11 @@
 <?php
 namespace Package\FoxNews;
 
+use App\Contracts\NewsAggregatorInterface;
+use App\DTOs\NewsAggregatorData;
 use App\ValueObjects\DataSource;
 
-class FoxNews
+class FoxNews implements NewsAggregatorInterface
 {
     /** @var DataSource */
     private DataSource $dataSource;
@@ -13,8 +15,8 @@ class FoxNews
         $this->dataSource = new DataSource(__DIR__ . DIRECTORY_SEPARATOR . 'foxnews.json');
     }
 
-    public function getNewsFromAPI()
+    public function fetch (): array
     {
-        return $this->data;
+        return NewsAggregatorData::allFromDataSource(json_decode($this->dataSource->contents(), true));
     }
 }

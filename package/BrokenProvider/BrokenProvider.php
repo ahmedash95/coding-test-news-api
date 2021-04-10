@@ -3,10 +3,10 @@
 namespace Package\BrokenProvider;
 
 use App\Contracts\NewsAggregatorInterface;
-use App\DTOs\NewsAggregatorData;
+use App\DTOs\ArticleData;
 use App\ValueObjects\DataSource;
 
-class BrokenProvider implements NewsAggregatorInterface
+final class BrokenProvider implements NewsAggregatorInterface
 {
     /** @var DataSource */
     private DataSource $dataSource;
@@ -18,6 +18,6 @@ class BrokenProvider implements NewsAggregatorInterface
 
     public function fetch (): array
     {
-        return NewsAggregatorData::allFromDataSource(json_decode($this->dataSource->contents(), true));
+        return ArticleData::allFromDataSource(json_decode($this->dataSource->contents(), true));
     }
 }

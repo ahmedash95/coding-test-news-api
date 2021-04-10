@@ -3,7 +3,7 @@ namespace App\ValueObjects;
 
 use RuntimeException;
 
-class DataSource
+final class DataSource
 {
     private string $source;
 

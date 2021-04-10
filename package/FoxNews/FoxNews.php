@@ -2,10 +2,10 @@
 namespace Package\FoxNews;
 
 use App\Contracts\NewsAggregatorInterface;
-use App\DTOs\NewsAggregatorData;
+use App\DTOs\ArticleData;
 use App\ValueObjects\DataSource;
 
-class FoxNews implements NewsAggregatorInterface
+final class FoxNews implements NewsAggregatorInterface
 {
     /** @var DataSource */
     private DataSource $dataSource;
@@ -17,6 +17,6 @@ class FoxNews implements NewsAggregatorInterface
 
     public function fetch (): array
     {
-        return NewsAggregatorData::allFromDataSource(json_decode($this->dataSource->contents(), true));
+        return ArticleData::allFromDataSource(json_decode($this->dataSource->contents(), true));
     }
 }

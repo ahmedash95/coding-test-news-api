@@ -7,7 +7,7 @@ use Package\BrokenProvider\BrokenProvider;
 use Package\FoxNews\FoxNews;
 use Package\NYTimes\NewYorkTimes;
 
-class NewsAggregatorFactory
+final class NewsAggregatorFactory
 {
     public static function createAggregator (string $aggregator): NewsAggregatorInterface
     {

@@ -2,10 +2,10 @@
 namespace Package\NYTimes;
 
 use App\Contracts\NewsAggregatorInterface;
-use App\DTOs\NewsAggregatorData;
+use App\DTOs\ArticleData;
 use App\ValueObjects\DataSource;
 
-class NewYorkTimes implements NewsAggregatorInterface
+final class NewYorkTimes implements NewsAggregatorInterface
 {
     /** @var DataSource */
     private DataSource $dataSource;
@@ -17,6 +17,6 @@ class NewYorkTimes implements NewsAggregatorInterface
 
     public function fetch (): array
     {
-        return NewsAggregatorData::allFromDataSource((array) simplexml_load_string($this->dataSource->contents()));
+        return ArticleData::allFromDataSource((array) simplexml_load_string($this->dataSource->contents()));
     }
 }

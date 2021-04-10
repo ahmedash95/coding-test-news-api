@@ -4,7 +4,7 @@ namespace App\DTOs;
 use ReflectionClass;
 use ReflectionProperty;
 
-final class NewsAggregatorData
+final class ArticleData
 {
     /** @var string */
     public string $title;

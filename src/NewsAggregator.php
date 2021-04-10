@@ -4,7 +4,7 @@ namespace App;
 use App\Contracts\NewsAggregatorInterface;
 use App\Factories\NewsAggregatorFactory;
 
-class NewsAggregator
+final class NewsAggregator
 {
     /** @var string */
     private string $defaultAggregator = 'FoxNews';

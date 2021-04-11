@@ -2,9 +2,10 @@
 
 namespace Package\NYTimes;
 
+use Package\INewProvider;
 use RuntimeException;
 
-class NewYorkTimes
+class NewYorkTimes implements INewProvider
 {
     private $data = [];
 
@@ -18,8 +19,18 @@ class NewYorkTimes
         $this->data = simplexml_load_file($path);
     }
 
-    public function getNews()
-    {
-        return $this->data;
+    public function getNews() {
+        
+        foreach ($this->data->articles as $row) {
+            $news[] = [
+                'title'        => (string) $row->title,
+                'author'       => (string) $row->author,
+                'image'        => (string) $row->image,
+                'publish_date' => (string) $row->published_at,
+                'source'       => (string) $row->source,
+                'url'          => (string) $row->url,
+            ];
+        }
+        return $news;
     }
 }

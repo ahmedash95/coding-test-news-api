@@ -2,9 +2,10 @@
 
 namespace Package\FoxNews;
 
+use Package\INewProvider;
 use RuntimeException;
 
-class FoxNews
+class FoxNews implements INewProvider
 {
     private $data = [];
 
@@ -18,8 +19,18 @@ class FoxNews
         $this->data = json_decode(file_get_contents($path), true);
     }
 
-    public function getNewsFromAPI()
-    {
-        return $this->data;
+    public function getNews() {
+        
+        foreach ($this->data['articles'] as $row) {
+            $news[] = [
+                'title'        => $row['title'],
+                'author'       => $row['author'],
+                'image'        => $row['urlToImage'],
+                'publish_date' => $row['publishedAt'],
+                'source'       => $row['source']['name'],
+                'url'          => $row['url'],
+            ];
+        }
+        return $news;
     }
 }

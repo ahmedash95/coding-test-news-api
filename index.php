@@ -1,10 +1,12 @@
 <?php
 
-use App\NewsAggregator;
+use App\NewsAbstractFactory;
 
 require __DIR__.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 
-$aggregator = new NewsAggregator();
-$news = $aggregator->get();
+$news = new NewsAbstractFactory();
 
-print_r($news);
+print_r(array_merge(
+    $news->createFoxNewsAggregator()->getArticles(),
+    $news->createNYTimesAggregator()->getArticles()
+));

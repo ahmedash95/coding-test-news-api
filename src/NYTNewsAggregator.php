@@ -4,7 +4,6 @@
 namespace App;
 
 
-use Package\FoxNews\FoxNews;
 use Package\NYTimes\NewYorkTimes;
 
 class NYTNewsAggregator extends BaseNewsAggregator

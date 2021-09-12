@@ -7,7 +7,7 @@ namespace App;
 use Package\FoxNews\FoxNews;
 use Package\NYTimes\NewYorkTimes;
 
-class NYTNewsAggregator
+class NYTNewsAggregator extends BaseNewsAggregator
 {
 	private $news;
 	private array $articles;

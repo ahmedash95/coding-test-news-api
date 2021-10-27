@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Monolog\Logger;
 use Package\BrokenProvider\BrokenProvider;
 
 class BrokenSource extends AbstractSource

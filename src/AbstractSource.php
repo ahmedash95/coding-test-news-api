@@ -2,9 +2,6 @@
 
 namespace App;
 
-use Monolog\Logger;
-use Package\BrokenProvider\BrokenProvider;
-
 class AbstractSource implements NewsInterface
 {
     protected $news = [];

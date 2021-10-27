@@ -69,6 +69,8 @@ This directory contains third party packages to fetch news from.
 
 **PLEASE DO NOT CHANGE ANY CODE IN THIS PACKAGE**
 
+# Note
+You don't need to create pull requests. just commit changes to your fork. as any PR won't be accepted
 
 # TODO
 

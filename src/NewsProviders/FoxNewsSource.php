@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\NewsProviders;
 
 use Package\FoxNews\FoxNews;
 

@@ -1,6 +1,8 @@
 <?php
 
-namespace App;
+namespace App\NewsProviders;
+
+use App\Log;
 
 class AbstractSource implements NewsInterface
 {

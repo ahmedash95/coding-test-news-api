@@ -1,9 +1,9 @@
 <?php
 
-use App\BrokenSource;
-use App\FoxNewsSource;
 use App\NewsAggregator;
-use App\NYNewsSource;
+use App\NewsProviders\BrokenSource;
+use App\NewsProviders\FoxNewsSource;
+use App\NewsProviders\NYNewsSource;
 
 require __DIR__.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 

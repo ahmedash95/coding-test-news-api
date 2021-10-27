@@ -11,6 +11,9 @@ class NYNewsSource extends AbstractSource
         $this->newsSource = new NewYorkTimes();
     }
 
+    /**
+     * @return array|void
+     */
     public function get()
     {
         parent::get();

@@ -6,12 +6,9 @@ use App\Log;
 
 class AbstractSource implements NewsInterface
 {
-    protected $news = [];
-    protected $newsProvider;
+    protected array $news = [];
+    protected object $newsProvider;
 
-    /**
-     * @return mixed
-     */
     public function get()
     {
         try {

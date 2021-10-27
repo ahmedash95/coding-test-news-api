@@ -11,6 +11,9 @@ class BrokenSource extends AbstractSource
         $this->newsProvider = new BrokenProvider();
     }
 
+    /**
+     * @return array|void
+     */
     public function get()
     {
         parent::get();

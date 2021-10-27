@@ -1,10 +1,16 @@
 <?php
 
+use App\BrokenSource;
+use App\FoxNewsSource;
 use App\NewsAggregator;
+use App\NYNewsSource;
 
 require __DIR__.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php';
 
-$aggregator = new NewsAggregator();
-$news = $aggregator->get();
+$newsAggregator = new NewsAggregator();
 
-print_r($news);
+$FoxNews = $newsAggregator->getNews(new FoxNewsSource());
+$NYNews = $newsAggregator->getNews(new NYNewsSource());
+$BrokenNews = $newsAggregator->getNews(new BrokenSource());
+
+print_r(array_merge($FoxNews, $NYNews, $BrokenNews));

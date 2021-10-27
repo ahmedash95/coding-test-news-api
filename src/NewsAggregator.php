@@ -6,12 +6,19 @@ use App\NewsProviders\NewsInterface;
 
 class NewsAggregator
 {
+    private array $newsSources = [];
+
     /**
      * @param NewsInterface $newsSource
      * @return mixed
      */
     public function getNews(NewsInterface $newsSource)
     {
-        return $newsSource->get();
+        $this->newsSources = array_merge($this->newsSources, $newsSource->get());
+    }
+
+    public function news()
+    {
+        return $this->newsSources;
     }
 }

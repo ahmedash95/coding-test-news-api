@@ -13,4 +13,4 @@ $FoxNews = $newsAggregator->getNews(new FoxNewsSource());
 $NYNews = $newsAggregator->getNews(new NYNewsSource());
 $BrokenNews = $newsAggregator->getNews(new BrokenSource());
 
-print_r(array_merge($FoxNews, $NYNews, $BrokenNews));
+print_r($newsAggregator->news());
